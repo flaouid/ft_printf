@@ -9,7 +9,7 @@
 # include <inttypes.h>
 
 # include "../libft/libft.h"
-# include "../includes/printf.h"
+# include "../include/printf.h"
 
 # define CHAR 1
 # define INT 2
@@ -20,7 +20,7 @@
 # define STAR_PREC 1
 # define STAR_WIDTH 2
 
-typedef struct t_params
+typedef struct s_params
 {
 	char	*str;
 	int		precision;
@@ -34,10 +34,18 @@ typedef struct t_params
 	int		space :2;
 	int		plus :2;
 	int		minus :2;
-}			s_params;
+}			t_params;
 
-void	flags_str(va_list args, t_params *pr);
-void	flags_char(va_list args, t_params *pr);
-void	strjoin_free(char *add, char **src, int type);
+void			flags_str(va_list args, t_params *pr);
+void			flags_char(va_list args, t_params *pr);
+void			ft_strjoin_free(char *add, char **src, int type);
+static void		check_flags(char c, t_params *pr);
+static void		flags_width_prec(char **cpy, t_params *pr, va_list args);
+void			check_star(va_list args, t_params *pr, int i);
+void			check(char **cpy, t_params *pr, va_list args);
+static void		check_base(char base[17], t_params *pr);
+void			add_str(char **str, char type, int number, int start);
+void			parse_error(t_params *pr);
+void			get_type_variable(t_params *pr);
 
 #endif

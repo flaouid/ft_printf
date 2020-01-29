@@ -1,12 +1,12 @@
-#include "printf.h"
+#include "../include/printf.h"
 
-int		ft_printf(const char *str, ...)
+int		ft_printf(const char *s, ...)
 {
 	va_list		args;
 	int			ret;
 
-	va_start(args, str);
-	ret = ft_printf(1, str, args);
+	va_start(args, s);
+	//ret = ft_printf(1, s, args);
 	va_end(args);
 	return (ret);
 }

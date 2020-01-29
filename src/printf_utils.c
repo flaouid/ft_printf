@@ -1,4 +1,5 @@
 #include "../include/printf.h"
+#include "../libft/libft.h"
 
 void	strjoin_free(char *add, char **src, int type)
 {
@@ -11,7 +12,7 @@ void	strjoin_free(char *add, char **src, int type)
 		return ;
 	if (type == JOIN_START)
 	{
-		ft_strcpy(dest, to_add);
+		ft_strcpy(dest, add);
 		ft_strcat(dest, *src);
 	}
 	if (type == JOIN_END)

@@ -1,31 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
+/*   ft_strcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: flaouid <laouid.ferdaous@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/18 11:24:53 by flaouid           #+#    #+#             */
-/*   Updated: 2020/01/29 10:08:43 by flaouid          ###   ########.fr       */
+/*   Created: 2020/01/29 10:13:26 by flaouid           #+#    #+#             */
+/*   Updated: 2020/01/29 11:25:05 by flaouid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void		ft_lstadd_back(t_list **alst, t_list *nw)
+char			*ft_strcpy(char *dst, const char *src)
 {
-	t_list	*tmp;
+	unsigned int	i;
 
-	if (!nw)
-		return ;
-	if (!*alst)
+	i = 0;
+	while (src[i])
 	{
-		(*alst) = nw;
-		return ;
+		dst[i] = src[i];
+		i++;
 	}
-	tmp = *alst;
-	while (tmp->next)
-		tmp = tmp->next;
-	tmp->next = nw;
-	nw->next = NULL;
+	dst[i] = '\0';
+	return (dst);
 }

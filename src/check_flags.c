@@ -1,5 +1,4 @@
 #include "../include/printf.h"
-#include "..include/libft.h"
 
 static void		check_flags(char c, t_params *pr)
 {
@@ -42,7 +41,7 @@ void	check_star(va_list args, t_params *pr, int i)
 {
 	int ret;
 
-	ret = va_arg(pr, int);
+	ret = va_arg(args, int);
 	if (i == STAR_PREC)
 	{
 		if (!ret)
@@ -78,7 +77,7 @@ void	check(char **cpy, t_params *pr, va_list args)
 		flags_width_prec(cpy, pr, args);
 	else if (**cpy == '*')
 	{
-		check_star(pr, args, STAR_WIDTH)
+		check_star(args, pr, STAR_WIDTH);
 		(*cpy)++;
 		check(cpy, pr, args);
 	}

@@ -14,7 +14,7 @@ void	flags_str(va_list args, t_params *pr)
 
 void	flags_char(va_list args, t_params *pr)
 {
-	char	*tmp;
+	char	*str;
 
 	if (pr->type == 'c')
 	{
