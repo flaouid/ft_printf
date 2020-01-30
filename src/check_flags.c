@@ -1,6 +1,6 @@
 #include "../include/printf.h"
 
-static void		check_flags(char c, t_params *pr)
+void		check_flags(char c, t_params *pr)
 {
 	if (c == '#')
 		pr->hash = 1;
@@ -14,7 +14,7 @@ static void		check_flags(char c, t_params *pr)
 		pr->minus = 1;
 }
 
-static void		flags_width_prec(char **cpy, t_params *pr, va_list args)
+void		flags_width_prec(char **cpy, t_params *pr, va_list args)
 {
 	if (**cpy == '.')
 	{

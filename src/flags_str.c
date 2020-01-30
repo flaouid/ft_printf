@@ -2,8 +2,6 @@
 
 void	flags_str(va_list args, t_params *pr)
 {
-	char *tmp;
-
 	if (pr->type == 's')
 		pr->str = ft_strdup(va_arg(args, char*));
 	if (pr->str == NULL)
@@ -25,4 +23,18 @@ void	flags_char(va_list args, t_params *pr)
 			pr->char_null = 1;
 		pr->str = str;
 	}
+}
+
+void	flags_int(va_list args, t_params *pr)
+{
+	unsigned long long nb;
+	char	base[17];
+
+	check_base(base, pr);
+	nb = va_arg(args, unsigned long long);
+	if (pr->type == 'p')
+		nb = (unsigned long)nb;
+	else
+		nb = (unsigned int)nb;
+	pr->str = ft_unsigned_itoa_base(nb, base);
 }

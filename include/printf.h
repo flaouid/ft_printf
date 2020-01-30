@@ -36,16 +36,33 @@ typedef struct s_params
 	int		minus :2;
 }			t_params;
 
+void			add_str(char **str, char type, int number, int start);
 void			flags_str(va_list args, t_params *pr);
 void			flags_char(va_list args, t_params *pr);
+void			flags_int(va_list args, t_params *pr);
+void			flags_width_prec(char **cpy, t_params *pr, va_list args);
 void			ft_strjoin_free(char *add, char **src, int type);
-static void		check_flags(char c, t_params *pr);
-static void		flags_width_prec(char **cpy, t_params *pr, va_list args);
+int				ft_printf(const char *s, ...);
+int				ft_vprintf(const char *format, va_list args);
+int				ft_dprintf(int fd, const char *format, ...);
+int				ft_vdprintf(int fd, const char *format, va_list args);
+void			ft_putnstr_fd(int fd, char *cpy, size_t *n, int *print);
+void			check_flags(char c, t_params *pr);
+void			check_sign(t_params *pr);
 void			check_star(va_list args, t_params *pr, int i);
 void			check(char **cpy, t_params *pr, va_list args);
-static void		check_base(char base[17], t_params *pr);
-void			add_str(char **str, char type, int number, int start);
-void			parse_error(t_params *pr);
+void			check_base(char base[17], t_params *pr);
+void			check_hash(t_params *pr);
 void			get_type_variable(t_params *pr);
+void			get_str(va_list args, t_params *pr);
+void			move_x(t_params *pr);
+void			modif_str(t_params *pr);
+int				parse_arg(int fd, char **cpy, va_list args, int *write);
+void			parse_width(t_params *pr);
+void			parse_precision(t_params *pr);
+void			parse_error(t_params *pr);
+void			print_arg(int fd, t_params *pr, int *print);
+int				write_again(int fd, char *cpy, va_list args, int *print);
+
 
 #endif

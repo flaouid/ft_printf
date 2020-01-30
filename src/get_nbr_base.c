@@ -4,7 +4,7 @@
    dans la bonne base et avec les bonnes conversions.
 */
 
-static void		check_base(char base[17], t_params *pr)
+void		check_base(char base[17], t_params *pr)
 {
 	if	(pr->type == 'x' || pr->type == 'p')
 		ft_strcpy(base, "0123456789abcdef");

@@ -39,7 +39,7 @@ void	add_str(char **str, char type, int number, int start)
 		return ;
 	ft_memset(tmp, type, number);
 	tmp[number] = '\0';
-	if (!dest)
+	if (!start)
 		dest = ft_strjoin(*str, tmp);
 	else
 	{
