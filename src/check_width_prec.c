@@ -21,7 +21,7 @@ void	parse_width(t_params *pr)
 	}
 }
 
-// Gere la precision : cut si variable str et prec sont < , et ajoute des 0 si >
+// Gere la precision : coupe si variable str et precision sont < , et ajoute des 0 si >
 
 void	parse_precision(t_params *pr)
 {
@@ -43,6 +43,6 @@ void	parse_precision(t_params *pr)
 		else
 			add_str(&(pr->str), '0', pr->precision - ft_strlen(pr->str), 1);
 	}
-	if (pr->precision < 0 && pr->str[0] == '0')
+	if (pr->precision < 0 || pr->str[0] == '0')
 		ft_strdel(pr->str);
 }

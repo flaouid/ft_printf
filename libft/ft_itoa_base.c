@@ -1,6 +1,6 @@
 #include "libft.h"
 
-static void	rec_itoa_ll(unsigned long long int value, char *base,
+static void	rec_itoa_ll(int value, char *base,
 char **str, int size)
 {
 	if (value / ft_strlen(base) == 0)
@@ -35,7 +35,7 @@ static char	*ft_strrev(char *str)
 	return (str);
 }
 
-char		*ft_unsigned_itoa_base(unsigned long long int value, char *base)
+char		*ft_unsigned_itoa_base(int value, char *base)
 {
 	char *str;
 

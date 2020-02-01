@@ -6,7 +6,7 @@
 /*   By: flaouid <laouid.ferdaous@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/04 11:08:09 by flaouid           #+#    #+#             */
-/*   Updated: 2020/01/30 17:12:15 by flaouid          ###   ########.fr       */
+/*   Updated: 2020/02/01 11:42:07 by flaouid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 size_t	ft_strlen(const char *s)
 {
-	int i;
+	size_t i;
 
 	i = 0;
 	if (!s)
 		return (0);
-	while (s[i])
+	while (s[i] != '\0')
 		i++;
 	return (i);
 }

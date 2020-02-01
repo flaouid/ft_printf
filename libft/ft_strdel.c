@@ -8,7 +8,7 @@ void	ft_strdel(char *str)
 	if (!str)
 		return ;
 	i = -1;
-	while (str[++i])
+	while (str[++i] != '\0')
 			;
 	j = -1;
 	while (++j < i)

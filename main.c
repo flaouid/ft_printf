@@ -3,9 +3,6 @@
 
 int main(void)
 {
-	int number=5;
-	char *pointer = "little";
-
-	ft_printf("Here is a number-%4d-and a-%10s-word.\n", number, pointer);
-	printf("Here is a number-%4d-and a-%10s-word.\n", number, pointer);
+	ft_printf("%u", 3);
+	printf("%u", 3);
 }

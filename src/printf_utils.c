@@ -43,7 +43,7 @@ void	add_str(char **str, char type, int number, int start)
 		dest = ft_strjoin(*str, tmp);
 	else
 	{
-		if (((*str)[0] == '-' || (*str)[0] == '+' || (*str)[0] == ' ') && type == '0')
+		if (((*str)[0] == '-' || (*str)[0] == '+' || ((*str)[0] == ' ' && type == '0')))
 		{
 			tmp[0] = (*str)[0];
 			(*str)[0] = '0';

@@ -2,9 +2,11 @@
 
 void	flags_str(va_list args, t_params *pr)
 {
-	if (pr->type == 's')
-		pr->str = ft_strdup(va_arg(args, char*));
-	if (pr->str == NULL)
+	char *temp;
+	temp = va_arg(args, char *);
+	if (pr->type == 's' && temp)
+		pr->str = ft_strdup(temp);
+	else if (pr->type == 's' && !temp)
 		pr->str = ft_strdup("(null)");
 	if (pr->precision < 0)
 		ft_strdel(pr->str);

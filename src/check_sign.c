@@ -12,7 +12,7 @@ void	check_hash(t_params *pr)
 {
 	if (pr->hash)
 	{
-		if (ft_strlen(pr->str) == 1 & pr->str[0] == '0' && pr->type != 'p')
+		if (ft_strlen(pr->str) == 1 && pr->str[0] == '0' && pr->type != 'p')
 			return ;
 		if ((pr->type == 'x' || pr->type == 'X') && !pr->str[0])
 			return ;

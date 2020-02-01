@@ -1,6 +1,5 @@
 NAME = libftprintf.a
 
-
 SRC = ./src/check_flags.c\
 	  ./src/check_arg.c\
 	  ./src/check_sign.c\
