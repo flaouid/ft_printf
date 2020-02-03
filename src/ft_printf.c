@@ -39,5 +39,5 @@ int			ft_vdprintf(int fd, const char *format, va_list args)
 	cpy = (char*)format;
 	print = 0;
 	ret = write_again(fd, cpy, args, &print);
-	return (ret == -1 ? ret : print);
+		return (ret == -1 ? ret : print + 1);
 }

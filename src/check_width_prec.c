@@ -36,13 +36,13 @@ void	parse_precision(t_params *pr)
 			pr->str = str;
 		}
 	}
-	else if (pr->precision >= (int)ft_strlen(pr->str))
+	else if (pr->precision >= (int)ft_strlen(pr->str) && pr->precision > 0)
 	{
 		if (pr->str[0] == '+' || pr->str[0] == '-')
 			add_str(&(pr->str), '0', pr->precision - ft_strlen(pr->str) + 1, 1);
 		else
 			add_str(&(pr->str), '0', pr->precision - ft_strlen(pr->str), 1);
 	}
-	if (pr->precision < 0 || pr->str[0] == '0')
+	if (pr->precision < 0 && pr->str[0] == '0')
 		ft_strdel(pr->str);
 }

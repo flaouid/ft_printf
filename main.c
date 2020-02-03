@@ -3,6 +3,6 @@
 
 int main(void)
 {
-	ft_printf("%u", 3);
-	printf("%u", 3);
+	ft_printf("%03X", 698334);
+	printf("%03X", 698334);
 }
