@@ -14,7 +14,7 @@ void	parse_error(t_params *pr)
 		pr->space = 0;
 	if (pr->type == 'p' && pr->plus)
 		pr->plus = 0;
-	if (pr->precision != 0 && (pr->var_type == INT))
+	if (pr->precision != 0 && (pr->var_type == INT || pr->var_type == INT_U))
 		pr->zero = 0;
 }
 
@@ -24,7 +24,7 @@ void	get_type_variable(t_params *pr)
 {
 	if (pr->type == 'd' || pr->type == 'i')
 		pr->var_type = INT;
-	else if (pr->type == 'u' || pr->type == 'p' || pr->type == 'o' || pr->type == 'x' || pr->type == 'X')
+	else if (pr->type == 'u' || pr->type == 'p' || pr->type == 'x' || pr->type == 'X')
 		pr->var_type = INT_U;
 	else if (pr->type == 's')
 		pr->var_type = STR;

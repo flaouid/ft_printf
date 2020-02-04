@@ -35,6 +35,28 @@ static char	*ft_strrev(char *str)
 	return (str);
 }
 
+char	*ft_llitoa_base(long long int value, char *base)
+{
+	char	*str;
+	int	size;
+	unsigned long long int	cpy;
+
+	if (value < 0)
+	{
+		if (ft_strlen(base) == 10)
+			copy = -value;
+		else
+			copy = value + 4294967296;
+	}
+	else
+		copy = value;
+	size = (value < 0 && ft_strlen(base) == 10) ? 2 : 1;
+	rec_itoa_ll(copy, base, &str, size);
+	if (value < 0 && ft_strlen(base) == 10)
+		str[0] = '-';
+	return (ft_strrev(str));
+}
+
 char		*ft_unsigned_itoa_base(int value, char *base)
 {
 	char *str;

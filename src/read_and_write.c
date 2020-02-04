@@ -10,7 +10,7 @@ void	ft_putnstr_fd(int fd, char *cpy, size_t *n, int *print)
 	}
 }
 
-int		write_again(int fd, char *cpy, va_list args, int *print)
+int		write_again(int fd, char *cpy, va_list args, int *write)
 {
 	int		ret;
 	size_t	n;
@@ -23,14 +23,14 @@ int		write_again(int fd, char *cpy, va_list args, int *print)
 		else
 		{
 			if (n)
-				ft_putnstr_fd(fd, cpy, &n, print);
-			ret = parse_arg(fd, &cpy, args, print);
+				ft_putnstr_fd(fd, cpy, &n, write);
+			ret = parse_arg(fd, &cpy, args, write);
 			if (ret == -1 || ret == 0)
 				return (ret);
 		}
 		cpy++;
 	}
 	if (n)
-		ft_putnstr_fd(fd, cpy, &n, print);
+		ft_putnstr_fd(fd, cpy, &n, write);
 	return (0);
 }

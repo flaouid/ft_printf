@@ -13,6 +13,8 @@ void	get_str(va_list args, t_params *pr)
 		flags_str(args, pr);
 	else if (pr->var_type == CHAR)
 		flags_char(args, pr);
+	else if (pr->var_type == INT_U)
+		get_str_u_nb(args, pr);
 	if (pr->type == '%')
 	{
 		tmp[0] = pr->type;
@@ -53,7 +55,7 @@ void	modif_str(t_params *pr)
 {
 	if (pr->type != 'c' && pr->type != '%')
 		parse_precision(pr);
-	if (pr->type == 'd' || pr->type == 'i')
+	if (pr->type == 'd' || pr->type == 'i' || pr->type == 'p')
 		check_sign(pr);
 	check_hash(pr);
 	parse_width(pr);
@@ -63,7 +65,7 @@ void	modif_str(t_params *pr)
 
 // coeur de la fonction qui gere l'argument
 
-int		parse_arg(int fd, char **cpy, va_list args, int *print)
+int		parse_arg(int fd, char **cpy, va_list args, int *write)
 {
 	t_params *pr;
 
@@ -81,7 +83,7 @@ int		parse_arg(int fd, char **cpy, va_list args, int *print)
 	parse_error(pr);
 	if (!pr->char_null)
 		modif_str(pr);
-	print_arg(fd, pr, print);
+	print_arg(fd, pr, write);
 	free(pr->str);
 	free(pr);
 	return (1);
