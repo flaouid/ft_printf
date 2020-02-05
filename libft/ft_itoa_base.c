@@ -1,7 +1,6 @@
 #include "libft.h"
 
-static void	rec_itoa_ll(int value, char *base,
-char **str, int size)
+static void	rec_itoa_ll(int value, char *base, char **str, int size)
 {
 	if (value / ft_strlen(base) == 0)
 	{
@@ -9,7 +8,7 @@ char **str, int size)
 		(*str)[size] = '\0';
 		(*str)[size - 1] = base[value % ft_strlen(base)];
 	}
-	else
+	if (value / ft_strlen(base) != 0)
 	{
 		rec_itoa_ll(value / ft_strlen(base), base, str, size + 1);
 		(*str)[size - 1] = base[value % ft_strlen(base)];
@@ -44,14 +43,14 @@ char	*ft_llitoa_base(long long int value, char *base)
 	if (value < 0)
 	{
 		if (ft_strlen(base) == 10)
-			copy = -value;
+			cpy = -value;
 		else
-			copy = value + 4294967296;
+			cpy = value + 4294967296;
 	}
 	else
-		copy = value;
+		cpy = value;
 	size = (value < 0 && ft_strlen(base) == 10) ? 2 : 1;
-	rec_itoa_ll(copy, base, &str, size);
+	rec_itoa_ll(cpy, base, &str, size);
 	if (value < 0 && ft_strlen(base) == 10)
 		str[0] = '-';
 	return (ft_strrev(str));

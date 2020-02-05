@@ -19,7 +19,7 @@ void		check_base(char base[17], t_params *pr)
 void	get_str_u_nb(va_list args, t_params *pr)
 {
 	unsigned long long nb;
-	char	base[17]
+	char	base[17];
 
 	check_base(base, pr);
 	nb = va_arg(args, unsigned long long);
@@ -27,6 +27,6 @@ void	get_str_u_nb(va_list args, t_params *pr)
 		nb = (unsigned long)nb;
 	else
 		nb = (unsigned int)nb;
-	pr->str = ft_ullitoa_base(nb, base);
+	pr->str = ft_llitoa_base(nb, base);
 }
 
