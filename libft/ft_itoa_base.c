@@ -8,7 +8,7 @@ static void	rec_itoa_ll(int value, char *base, char **str, int size)
 		(*str)[size] = '\0';
 		(*str)[size - 1] = base[value % ft_strlen(base)];
 	}
-	if (value / ft_strlen(base) != 0)
+	else
 	{
 		rec_itoa_ll(value / ft_strlen(base), base, str, size + 1);
 		(*str)[size - 1] = base[value % ft_strlen(base)];

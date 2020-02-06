@@ -17,10 +17,12 @@ void	check_hash(t_params *pr)
 		if ((pr->type == 'x' || pr->type == 'X') && !pr->str[0])
 			return ;
 		if ((pr->type == 'o' && pr->str[0] == '0'))
-			ft_strjoin("0", pr->str);
+			return ;
+		if ((pr->type == 'o')
+			strjoin_free("0", &pr->str, JOIN_START); 
 		else if (pr->type == 'X')
-			ft_strjoin("0X", pr->str);
+			strjoin_free("0X", &pr->str, JOIN_START);
 		else if ((pr->type == 'p' || pr->type == 'x'))
-			ft_strjoin("0x", pr->str);
+			strjoin_free("0x", &pr->str, JOIN_START);
 	}
 }

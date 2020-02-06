@@ -20,7 +20,7 @@ void	print_arg(int fd, t_params *pr, int *print)
 				c = pr->zero ? '0' : ' ';
 				i = 0;
 				while (++i < pr->width)
-					write(fd, &c, 0);
+					write(fd, &c, 1);
 			}
 			print = print + pr->width;
 		}

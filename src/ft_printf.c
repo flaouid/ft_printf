@@ -33,11 +33,11 @@ int			ft_dprintf(int fd, const char *format, ...)
 int			ft_vdprintf(int fd, const char *format, va_list args)
 {
 	char	*cpy;
-	int		print;
+	int		write;
 	int		ret;
 
 	cpy = (char*)format;
-	print = 0;
-	ret = write_again(fd, cpy, args, &print);
-		return (ret == -1 ? ret : print + 1);
+	write = 0;
+	ret = write_again(fd, cpy, args, &write);
+		return (ret == -1 ? ret : write);
 }
