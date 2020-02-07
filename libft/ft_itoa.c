@@ -6,19 +6,19 @@
 /*   By: flaouid <laouid.ferdaous@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/13 13:00:58 by flaouid           #+#    #+#             */
-/*   Updated: 2019/11/13 16:53:14 by flaouid          ###   ########.fr       */
+/*   Updated: 2020/02/07 12:58:12 by flaouid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char		*ft_itoa(int n)
+char		*ft_itoa(unsigned int n)
 {
 	char	*output;
 
 	if (!(output = (char *)malloc(sizeof(char) * 2)))
 		return (NULL);
-	if (n == -2147483648)
+	if (n == 2147483648)
 		return (output = ft_strdup("-2147483648"));
 	if (n < 0)
 	{

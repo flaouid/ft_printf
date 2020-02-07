@@ -3,6 +3,6 @@
 
 int main(void)
 {
-	ft_printf("%-3.3i\n", -8462);
-	printf("%-3.3i\n", -8462);
+	ft_printf("Il fait au moins %u\n", -8000);
+	printf("Il fait au moins %u\n", -8000);
 }

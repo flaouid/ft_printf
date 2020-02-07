@@ -5,7 +5,7 @@ void	ft_putnstr_fd(int fd, char *cpy, size_t *n, int *print)
 	if (cpy)
 	{
 		write(fd, cpy - *n, *n);
-		*print += *n
+		*print += *n;
 		*n = 0;
 	}
 }

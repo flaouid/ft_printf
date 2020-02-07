@@ -12,6 +12,7 @@ static void	rec_itoa_ll(int value, char *base, char **str, int size)
 	{
 		rec_itoa_ll(value / ft_strlen(base), base, str, size + 1);
 		(*str)[size - 1] = base[value % ft_strlen(base)];
+		ft_llitoa_base(value / ft_strlen(base), base);
 	}
 }
 

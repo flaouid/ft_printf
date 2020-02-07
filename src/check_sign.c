@@ -18,8 +18,8 @@ void	check_hash(t_params *pr)
 			return ;
 		if ((pr->type == 'o' && pr->str[0] == '0'))
 			return ;
-		if ((pr->type == 'o')
-			strjoin_free("0", &pr->str, JOIN_START); 
+		if (pr->type == 'o')
+			strjoin_free("0", &pr->str, JOIN_START);
 		else if (pr->type == 'X')
 			strjoin_free("0X", &pr->str, JOIN_START);
 		else if ((pr->type == 'p' || pr->type == 'x'))

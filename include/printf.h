@@ -64,6 +64,7 @@ void			parse_width(t_params *pr);
 void			parse_precision(t_params *pr);
 void			parse_error(t_params *pr);
 void			print_arg(int fd, t_params *pr, int *print);
+void			strjoin_free(char *add, char **src, int type);
 int				write_again(int fd, char *cpy, va_list args, int *print);
 
 

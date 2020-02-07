@@ -6,7 +6,7 @@
 /*   By: flaouid <laouid.ferdaous@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/04 13:25:59 by flaouid           #+#    #+#             */
-/*   Updated: 2019/11/18 16:36:34 by flaouid          ###   ########.fr       */
+/*   Updated: 2020/02/07 11:37:13 by flaouid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,12 @@ int			ft_atoi(const char *str)
 		i++;
 	if (ft_isdigit(str[i]))
 	{
-		while (ft_is_num(str[i]) && str[i])
+		while (ft_isdigit(str[i]) && str[i])
 		{
-			result = (result * 10) - (str[i++] - '0');					
-			if (result > 0)																	return (is_neg == -1 ? 0 : -1);
-																			}
+			result = (result * 10) - (str[i++] - '0');
+			if (result > 0)
+				return (is_neg == -1 ? 0 : -1);
+		}
 		return ((int)(result * (is_neg * -1)));
 	}
 	else

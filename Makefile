@@ -27,7 +27,9 @@ SRC = ./src/check_flags.c\
 	  ./libft/ft_strdel.c\
 	  ./libft/ft_strlen.c\
 	  ./libft/ft_substr.c\
-	  ./libft/ft_itoa_base.c
+	  ./libft/ft_itoa_base.c\
+	  ./libft/ft_putstr.c\
+	  ./libft/ft_itoa.c
 
 OBJ = $(SRC:.c=.o)
 LIB_OBJ = ./libft/*.o

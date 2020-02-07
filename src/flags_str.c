@@ -38,5 +38,5 @@ void	flags_int(va_list args, t_params *pr)
 		nb = (unsigned long)nb;
 	else
 		nb = (unsigned int)nb;
-	pr->str = ft_unsigned_itoa_base(nb, base);
+	pr->str = ft_itoa(nb);
 }
