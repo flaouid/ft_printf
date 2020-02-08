@@ -27,7 +27,7 @@ void	flags_char(va_list args, t_params *pr)
 	}
 }
 
-void	flags_int(va_list args, t_params *pr)
+void	flags_int_ll(va_list args, t_params *pr)
 {
 	unsigned long long nb;
 	char	base[17];
@@ -35,8 +35,6 @@ void	flags_int(va_list args, t_params *pr)
 	check_base(base, pr);
 	nb = va_arg(args, unsigned long long);
 	if (pr->type == 'p')
-		nb = (unsigned long)nb;
-	else
-		nb = (unsigned int)nb;
-	pr->str = ft_itoa(nb);
+		nb = (unsigned long long int)nb;
+	pr->str = ft_itoa_base_ll(nb, base);
 }

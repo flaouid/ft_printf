@@ -16,16 +16,14 @@ void		check_base(char base[17], t_params *pr)
 		ft_strcpy(base, "0123456789");
 }
 
-void	get_str_u_nb(va_list args, t_params *pr)
+void	flags_int(va_list args, t_params *pr)
 {
-	unsigned long long nb;
+	unsigned int nb;
 	char	base[17];
 
 	check_base(base, pr);
-	nb = va_arg(args, unsigned long long);
-	if (pr->type == 'p')
-		nb = (unsigned long int)nb;
-	else
+	nb = va_arg(args, unsigned int);
+	if (!(pr->type == 'p'))
 		nb = (unsigned int)nb;
 	pr->str = ft_itoa(nb);
 }

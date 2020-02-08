@@ -22,9 +22,9 @@ void	parse_error(t_params *pr)
 
 void	get_type_variable(t_params *pr)
 {
-	if (pr->type == 'd' || pr->type == 'i')
+	if (pr->type == 'd' || pr->type == 'i' || pr->type == 'u')
 		pr->var_type = INT;
-	else if (pr->type == 'u' || pr->type == 'p' || pr->type == 'x' || pr->type == 'X' || pr->type == 'o')
+	else if (pr->type == 'p' || pr->type == 'x' || pr->type == 'X' || pr->type == 'o')
 		pr->var_type = INT_U;
 	else if (pr->type == 's')
 		pr->var_type = STR;

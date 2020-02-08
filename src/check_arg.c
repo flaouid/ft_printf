@@ -14,7 +14,7 @@ void	get_str(va_list args, t_params *pr)
 	else if (pr->var_type == CHAR)
 		flags_char(args, pr);
 	else if (pr->var_type == INT_U)
-		get_str_u_nb(args, pr);
+		flags_int_ll(args, pr);
 	if (pr->type == '%')
 	{
 		tmp[0] = pr->type;
@@ -48,17 +48,18 @@ void	 move_x(t_params *pr)
 }
 
 
-// modifier la string selon : precision, signe, hash, width
+// modifier la string selon : precision, signe, width
 
 
 void	modif_str(t_params *pr)
 {
 	if (pr->type != 'c' && pr->type != '%')
 		parse_precision(pr);
-	if (pr->type == 'd' || pr->type == 'i' || pr->type == 'p')
+	if (pr->type == 'd' || pr->type == 'i' || pr->type == 'p' || pr->type == 'u')
 		check_sign(pr);
-	check_hash(pr);
+	parse_precision(pr);
 	parse_width(pr);
+	check_hash(pr);
 	if (pr->hash && pr->width)
 		move_x(pr);
 }

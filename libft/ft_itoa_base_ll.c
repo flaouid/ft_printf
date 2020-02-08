@@ -1,6 +1,6 @@
 #include "libft.h"
 
-char			*ft_itoa_base(unsigned int n, char *base)
+char			*ft_itoa_base_ll(unsigned long long n, char *base)
 {
 	char		*str;
 	if (!(str = (char *)ft_calloc(sizeof(char), 2)))
@@ -14,8 +14,8 @@ char			*ft_itoa_base(unsigned int n, char *base)
 	else if (n >= (unsigned int)ft_strlen(base))
 	{
 		free(str);
-		str = ft_strjoin(ft_itoa_base(n / ft_strlen(base), base),
-			ft_itoa_base(n % ft_strlen(base), base));
+		str = ft_strjoin(ft_itoa_base_ll(n / ft_strlen(base), base),
+			ft_itoa_base_ll(n % ft_strlen(base), base));
 	}
 	else if (n < (unsigned int)ft_strlen(base) && n >= 0)
 	{

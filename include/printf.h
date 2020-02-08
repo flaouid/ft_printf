@@ -40,9 +40,9 @@ void			add_str(char **str, char type, int number, int start);
 void			flags_str(va_list args, t_params *pr);
 void			flags_char(va_list args, t_params *pr);
 void			flags_int(va_list args, t_params *pr);
+void			flags_int_ll(va_list args, t_params *pr);
 void			flags_width_prec(char **cpy, t_params *pr, va_list args);
 void			ft_strjoin_free(char *add, char **src, int type);
-char			*ft_llitoa_base(long long int value, char *base);
 int				ft_printf(const char *s, ...);
 int				ft_vprintf(const char *format, va_list args);
 int				ft_dprintf(int fd, const char *format, ...);
@@ -56,7 +56,6 @@ void			check_base(char base[17], t_params *pr);
 void			check_hash(t_params *pr);
 void			get_type_variable(t_params *pr);
 void			get_str(va_list args, t_params *pr);
-void			get_str_u_nb(va_list args, t_params *pr);
 void			move_x(t_params *pr);
 void			modif_str(t_params *pr);
 int				parse_arg(int fd, char **cpy, va_list args, int *write);
@@ -66,6 +65,7 @@ void			parse_error(t_params *pr);
 void			print_arg(int fd, t_params *pr, int *print);
 void			strjoin_free(char *add, char **src, int type);
 int				write_again(int fd, char *cpy, va_list args, int *print);
+
 
 
 #endif

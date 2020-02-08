@@ -17,6 +17,7 @@ SRC = ./src/check_flags.c\
 	  ./libft/ft_memalloc.c\
 	  ./libft/ft_memset.c\
 	  ./libft/ft_bzero.c\
+	  ./libft/ft_calloc.c\
 	  ./libft/ft_strcpy.c\
 	  ./libft/ft_strdup.c\
 	  ./libft/ft_strjoin.c\
@@ -27,6 +28,7 @@ SRC = ./src/check_flags.c\
 	  ./libft/ft_strdel.c\
 	  ./libft/ft_strlen.c\
 	  ./libft/ft_substr.c\
+	  ./libft/ft_itoa_base_ll.c\
 	  ./libft/ft_itoa_base.c\
 	  ./libft/ft_putstr.c\
 	  ./libft/ft_itoa.c
