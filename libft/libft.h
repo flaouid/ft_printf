@@ -6,7 +6,7 @@
 /*   By: flaouid <laouid.ferdaous@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/06 15:25:32 by flaouid           #+#    #+#             */
-/*   Updated: 2020/02/08 16:49:52 by flaouid          ###   ########.fr       */
+/*   Updated: 2020/02/09 17:20:46 by flaouid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 
 void				ft_putchar(char c);
 int					ft_atoi(const char *str);
-char				*ft_itoa(unsigned int n);
+char				*ft_itoa(int n);
 void				ft_bzero(void *s, size_t n);
 void				*ft_calloc(size_t count, size_t size);
 int					ft_isalnum(int c);
