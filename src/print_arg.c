@@ -2,13 +2,16 @@
 
 // print l'argument, gere le cas du char 0, incremente le compteur de retour
 
-void	print_arg(int fd, t_params *pr, int *print)
+int	print_arg(int fd, t_params *pr, int *print)
 {
 	int	i;
 	char c;
+	int ret;
+
 
 	print = print + ft_strlen(pr->str);
 	write(fd, pr->str, ft_strlen(pr->str));
+	ret = ft_strlen(pr->str);
 	if (pr->char_null)
 	{
 		if (!pr->width)
@@ -20,10 +23,15 @@ void	print_arg(int fd, t_params *pr, int *print)
 				c = pr->zero ? '0' : ' ';
 				i = 0;
 				while (++i < pr->width)
+				{
+					ret++;
 					write(fd, &c, 1);
+				}
 			}
 			print = print + pr->width;
 		}
 		ft_putchar(0);
+		ret++;
 	}
+	return (ret);
 }

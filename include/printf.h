@@ -36,6 +36,12 @@ typedef struct s_params
 	int		minus :2;
 }			t_params;
 
+typedef struct	 s_ret
+{
+	int i;
+} 				t_ret;
+
+
 void			add_str(char **str, char type, int number, int start);
 void			flags_str(va_list args, t_params *pr);
 void			flags_char(va_list args, t_params *pr);
@@ -62,7 +68,7 @@ int				parse_arg(int fd, char **cpy, va_list args, int *write);
 void			parse_width(t_params *pr);
 void			parse_precision(t_params *pr);
 void			parse_error(t_params *pr);
-void			print_arg(int fd, t_params *pr, int *print);
+int				print_arg(int fd, t_params *pr, int *print);
 void			strjoin_free(char *add, char **src, int type);
 int				write_again(int fd, char *cpy, va_list args, int *print);
 

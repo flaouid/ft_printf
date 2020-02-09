@@ -9,7 +9,7 @@ int			ft_vdprintf(int fd, const char *format, va_list args)
 	cpy = (char*)format;
 	write = 0;
 	ret = write_again(fd, cpy, args, &write);
-		return (ret == -1 ? ret : write);
+		return (ret);
 }
 
 int			ft_dprintf(int fd, const char *format, ...)
@@ -35,11 +35,19 @@ int		ft_printf(const char *s, ...)
 {
 	va_list		args;
 	int			ret;
+	int			rev;
 
+	rev = 0;
+	ret = 0;
 	va_start(args, s);
 	ret = ft_vdprintf(1, s, args);
+//	while (s[ret] != '\0')
+//	{
+//		if (s[ret] && s[ret] == '%')
+//			ret++;
+//		else
+//			return (ft_strlen(&s[ret++]));
+//	}
 	va_end(args);
-	while (s[ret] != '\0')
-		ret++;
-	return (ret + 1);
+	return (ret);
 }

@@ -16,6 +16,7 @@ int		write_again(int fd, char *cpy, va_list args, int *write)
 	size_t	n;
 
 	n = 0;
+	ret = 0;
 	while (*cpy)
 	{
 		if (*cpy != '%')
@@ -23,14 +24,20 @@ int		write_again(int fd, char *cpy, va_list args, int *write)
 		else
 		{
 			if (n)
+			{
+				ret += n;
 				ft_putnstr_fd(fd, cpy, &n, write);
-			ret = parse_arg(fd, &cpy, args, write);
-			if (ret == -1 || ret == 0)
-				return (ret);
+			}
+			ret += parse_arg(fd, &cpy, args, write);
+	//		if (ret == 0)
+	//			return (0);
 		}
 		cpy++;
 	}
 	if (n)
+	{
+		ret += n;
 		ft_putnstr_fd(fd, cpy, &n, write);
-	return (0);
+	}
+	return (ret);
 }

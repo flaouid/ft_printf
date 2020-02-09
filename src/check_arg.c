@@ -69,6 +69,7 @@ void	modif_str(t_params *pr)
 int		parse_arg(int fd, char **cpy, va_list args, int *write)
 {
 	t_params *pr;
+	int ret;
 
 	pr = (t_params*)ft_memalloc(sizeof(t_params));
 	(*cpy)++;
@@ -77,15 +78,15 @@ int		parse_arg(int fd, char **cpy, va_list args, int *write)
 	{
 		free(pr);
 		(*cpy)--;
-		return (1);
+		return (0);
 	}
 	get_type_variable(pr);
 	get_str(args, pr);
 	parse_error(pr);
 	if (!pr->char_null)
 		modif_str(pr);
-	print_arg(fd, pr, write);
+	ret = print_arg(fd, pr, write);
 	free(pr->str);
 	free(pr);
-	return (1);
+	return (ret);
 }

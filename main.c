@@ -3,6 +3,6 @@
 
 int main(void)
 {
-	ft_printf("%7d\n", -14);
-	printf("%7d\n", -14);
+	ft_printf("%5p\n", 0);
+	printf("%5p\n", 0);
 }
