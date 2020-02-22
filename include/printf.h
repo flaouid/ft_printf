@@ -6,7 +6,7 @@
 /*   By: flaouid <laouid.ferdaous@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/22 12:53:38 by flaouid           #+#    #+#             */
-/*   Updated: 2020/02/22 12:53:43 by flaouid          ###   ########.fr       */
+/*   Updated: 2020/02/22 14:15:52 by flaouid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,7 @@ void			flags_str(va_list args, t_params *pr);
 void			flags_char(va_list args, t_params *pr);
 void			flags_int(va_list args, t_params *pr);
 void			flags_int_ll(va_list args, t_params *pr);
+void			flags_int_ll_x(va_list args, t_params *pr);
 void			flags_int_u(va_list args, t_params *pr);
 void			flags_width_prec(char **cpy, t_params *pr, va_list args);
 void			ft_strjoin_free(char *add, char **src, int type);
