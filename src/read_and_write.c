@@ -6,7 +6,7 @@
 /*   By: flaouid <laouid.ferdaous@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/22 13:16:41 by flaouid           #+#    #+#             */
-/*   Updated: 2020/02/22 15:04:14 by flaouid          ###   ########.fr       */
+/*   Updated: 2020/02/22 15:13:27 by flaouid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,14 +33,17 @@ int			write_again(int fd, char *cpy, va_list args, int *write)
 	{
 		if (*cpy != '%')
 			n++;
-		else if (n)
+		else
 		{
-			ret += n;
-			ft_putnstr_fd(fd, cpy, &n, write);
+			if (n)
+			{
+				ret += n;
+				ft_putnstr_fd(fd, cpy, &n, write);
+			}
+			ret += parse_arg(fd, &cpy, args, write);
 		}
-		ret += parse_arg(fd, &cpy, args, write);
+		cpy++;
 	}
-	cpy++;
 	if (n)
 	{
 		ret += n;
