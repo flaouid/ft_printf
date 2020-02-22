@@ -6,7 +6,7 @@
 /*   By: flaouid <laouid.ferdaous@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/22 13:13:06 by flaouid           #+#    #+#             */
-/*   Updated: 2020/02/22 13:14:03 by flaouid          ###   ########.fr       */
+/*   Updated: 2020/02/22 15:03:48 by flaouid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,22 +25,18 @@ int			print_arg(int fd, t_params *pr, int *print)
 	{
 		if (!pr->width)
 			print = print + 1;
-		else
+		else if (pr->width && !pr->minus)
 		{
-			if (pr->width && !pr->minus)
+			c = pr->zero ? '0' : ' ';
+			i = 0;
+			while (++i < pr->width)
 			{
-				c = pr->zero ? '0' : ' ';
-				i = 0;
-				while (++i < pr->width)
-				{
-					ret++;
-					write(fd, &c, 1);
-				}
+				ret++;
+				write(fd, &c, 1);
 			}
-			print = print + pr->width;
 		}
-		ft_putchar(0);
-		ret++;
+		print = print + pr->width;
 	}
-	return (ret);
+	ft_putchar(0);
+	return (ret++);
 }

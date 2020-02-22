@@ -6,7 +6,7 @@
 /*   By: flaouid <laouid.ferdaous@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/22 13:06:59 by flaouid           #+#    #+#             */
-/*   Updated: 2020/02/22 14:21:27 by flaouid          ###   ########.fr       */
+/*   Updated: 2020/02/22 15:00:52 by flaouid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,6 @@ void					flags_int_ll_x(va_list args, t_params *pr)
 {
 	unsigned long long	nb;
 	char				base[17];
-	char				*tmp;
 
 	check_base(base, pr);
 	nb = va_arg(args, unsigned long long);
