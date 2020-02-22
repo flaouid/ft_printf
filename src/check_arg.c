@@ -1,13 +1,24 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   check_arg.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: flaouid <laouid.ferdaous@gmail.com>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/02/22 12:58:05 by flaouid           #+#    #+#             */
+/*   Updated: 2020/02/22 12:59:34 by flaouid          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../include/printf.h"
 
-
-// envoie a la bonne fonction en fonction du type de variable
-
-void	get_str(va_list args, t_params *pr)
+void			get_str(va_list args, t_params *pr)
 {
-	char tmp[2];
+	char		tmp[2];
 
-	if (pr->var_type == INT)
+	if (pr->type == 'u')
+		flags_int_u(args, pr);
+	else if (pr->var_type == INT)
 		flags_int(args, pr);
 	else if (pr->var_type == STR)
 		flags_str(args, pr);
@@ -23,56 +34,32 @@ void	get_str(va_list args, t_params *pr)
 	}
 }
 
-
-// fonction spe pour decaler le flag avec les 0 devants
-
-
-void	 move_x(t_params *pr)
+void			move_x(t_params *pr)
 {
-	int i;
-
-	i = -1;
-	while (pr->str[++i])
-	{
-		if (pr->str[i] == 'x')
-		{
-			if (ft_strlen(pr->str) > 3)
-			{
-				pr->str[i] = '0';
-				pr->str[1] = 'x';
-			}
-		}
-		if (pr->str[i] != '0')
-			break ;
-	}
+	pr->str[0] = '0';
+	pr->str[1] = 'x';
 }
 
-
-// modifier la string selon : precision, signe, width
-
-
-void	modif_str(t_params *pr)
+void			modif_str(t_params *pr)
 {
 	if (pr->type != 'c' && pr->type != '%')
 		parse_precision(pr);
-	if (pr->type == 'd' || pr->type == 'i' || pr->type == 'p' || pr->type == 'u')
+	if (pr->type == 'd' || pr->type == 'i' ||
+		pr->type == 'p' || pr->type == 'u')
 		check_sign(pr);
 	parse_precision(pr);
 	parse_width(pr);
 	check_hash(pr);
-	if (pr->hash && pr->width)
-		move_x(pr);
 }
 
-// coeur de la fonction qui gere l'argument
-
-int		parse_arg(int fd, char **cpy, va_list args, int *write)
+int				parse_arg(int fd, char **cpy, va_list args, int *write)
 {
-	t_params *pr;
-	int ret;
+	t_params	*pr;
+	int			ret;
 
 	pr = (t_params*)ft_memalloc(sizeof(t_params));
 	(*cpy)++;
+	pr->precision = -1;
 	check(cpy, pr, args);
 	if (!pr->type)
 	{

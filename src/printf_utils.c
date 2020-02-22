@@ -1,9 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   printf_utils.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: flaouid <laouid.ferdaous@gmail.com>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/02/22 13:15:30 by flaouid           #+#    #+#             */
+/*   Updated: 2020/02/22 13:16:25 by flaouid          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../include/printf.h"
 #include "../libft/libft.h"
 
-void	strjoin_free(char *add, char **src, int type)
+void			strjoin_free(char *add, char **src, int type)
 {
-	char *dest;
+	char		*dest;
 
 	if (!add || !src)
 		return ;
@@ -27,12 +39,10 @@ void	strjoin_free(char *add, char **src, int type)
 	}
 }
 
-// Fonction qui ajoute les 0 ou " " a une chaine.
-
-void	add_str(char **str, char type, int number, int start)
+void			add_str(char **str, char type, int number, int start)
 {
-	char *dest;
-	char *tmp;
+	char		*dest;
+	char		*tmp;
 
 	tmp = (char*)malloc(sizeof(char) * (number + 1));
 	if (!tmp)
@@ -43,7 +53,7 @@ void	add_str(char **str, char type, int number, int start)
 		dest = ft_strjoin(*str, tmp);
 	else
 	{
-		if (((*str)[0] == '-'|| (*str)[0] == '+' || (*str)[0] == ' ') && type == '0')
+		if (*str && (*str)[0] == '-' && type == '0')
 		{
 			tmp[0] = (*str)[0];
 			(*str)[0] = '0';

@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   read_and_write.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: flaouid <laouid.ferdaous@gmail.com>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/02/22 13:16:41 by flaouid           #+#    #+#             */
+/*   Updated: 2020/02/22 13:30:20 by flaouid          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../include/printf.h"
 
-void	ft_putnstr_fd(int fd, char *cpy, size_t *n, int *print)
+void		ft_putnstr_fd(int fd, char *cpy, size_t *n, int *print)
 {
 	if (cpy)
 	{
@@ -10,7 +22,7 @@ void	ft_putnstr_fd(int fd, char *cpy, size_t *n, int *print)
 	}
 }
 
-int		write_again(int fd, char *cpy, va_list args, int *write)
+int			write_again(int fd, char *cpy, va_list args, int *write)
 {
 	int		ret;
 	size_t	n;
@@ -29,8 +41,6 @@ int		write_again(int fd, char *cpy, va_list args, int *write)
 				ft_putnstr_fd(fd, cpy, &n, write);
 			}
 			ret += parse_arg(fd, &cpy, args, write);
-	//		if (ret == 0)
-	//			return (0);
 		}
 		cpy++;
 	}

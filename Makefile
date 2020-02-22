@@ -30,6 +30,7 @@ SRC = ./src/check_flags.c\
 	  ./libft/ft_substr.c\
 	  ./libft/ft_itoa_base_ll.c\
 	  ./libft/ft_itoa_base.c\
+	  ./libft/ft_itoa_unsigned.c\
 	  ./libft/ft_putstr.c\
 	  ./libft/ft_itoa.c
 

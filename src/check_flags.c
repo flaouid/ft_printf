@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   check_flags.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: flaouid <laouid.ferdaous@gmail.com>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/02/22 12:59:49 by flaouid           #+#    #+#             */
+/*   Updated: 2020/02/22 13:00:36 by flaouid          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../include/printf.h"
 
 void		check_flags(char c, t_params *pr)
@@ -19,6 +31,7 @@ void		flags_width_prec(char **cpy, t_params *pr, va_list args)
 	if (**cpy == '.')
 	{
 		(*cpy)++;
+		pr->precision = 0;
 		if (**cpy == '*')
 		{
 			check_star(args, pr, STAR_PREC);
@@ -27,8 +40,6 @@ void		flags_width_prec(char **cpy, t_params *pr, va_list args)
 			return ;
 		}
 		pr->precision = ft_atoi(*cpy);
-		if (pr->precision == 0)
-			pr->precision = -1;
 	}
 	else
 		pr->width = ft_atoi(*cpy);
@@ -37,17 +48,17 @@ void		flags_width_prec(char **cpy, t_params *pr, va_list args)
 	check(cpy, pr, args);
 }
 
-void	check_star(va_list args, t_params *pr, int i)
+void		check_star(va_list args, t_params *pr, int i)
 {
-	int ret;
+	int		ret;
 
 	ret = va_arg(args, int);
 	if (i == STAR_PREC)
 	{
 		if (!ret)
-			pr->precision = -1;
-		else if (ret < 0)
 			pr->precision = 0;
+		else if (ret < 0)
+			pr->precision = -1;
 		else
 			pr->precision = ret;
 		return ;
@@ -63,17 +74,17 @@ void	check_star(va_list args, t_params *pr, int i)
 	}
 }
 
-void	check(char **cpy, t_params *pr, va_list args)
+void		check(char **cpy, t_params *pr, va_list args)
 {
 	if (ft_ischarset(**cpy, "cspdiuxX%"))
 		pr->type = **cpy;
-	else if (ft_ischarset(**cpy, "#0 +-" ))
+	else if (ft_ischarset(**cpy, "#0 +-"))
 	{
 		check_flags(**cpy, pr);
 		(*cpy)++;
 		check(cpy, pr, args);
 	}
-	else if (**cpy == '.' || ft_isdigit(**cpy))
+	else if ((**cpy == '.' || ft_isdigit(**cpy)))
 		flags_width_prec(cpy, pr, args);
 	else if (**cpy == '*')
 	{

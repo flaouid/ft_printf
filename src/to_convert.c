@@ -1,6 +1,16 @@
-#include "../include/printf.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   to_convert.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: flaouid <laouid.ferdaous@gmail.com>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/02/22 13:18:22 by flaouid           #+#    #+#             */
+/*   Updated: 2020/02/22 13:18:34 by flaouid          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-// Gere les cas d'erreurs
+#include "../include/printf.h"
 
 void	parse_error(t_params *pr)
 {
@@ -14,17 +24,16 @@ void	parse_error(t_params *pr)
 		pr->space = 0;
 	if (pr->type == 'p' && pr->plus)
 		pr->plus = 0;
-	if (pr->precision != 0 && (pr->var_type == INT || pr->var_type == INT_U))
+	if (pr->precision > 0 && (pr->var_type == INT || pr->var_type == INT_U))
 		pr->zero = 0;
 }
-
-// Recup type variable
 
 void	get_type_variable(t_params *pr)
 {
 	if (pr->type == 'd' || pr->type == 'i' || pr->type == 'u')
 		pr->var_type = INT;
-	else if (pr->type == 'p' || pr->type == 'x' || pr->type == 'X' || pr->type == 'o')
+	else if (pr->type == 'p' || pr->type == 'x' ||
+			pr->type == 'X' || pr->type == 'o')
 		pr->var_type = INT_U;
 	else if (pr->type == 's')
 		pr->var_type = STR;

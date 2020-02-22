@@ -4,7 +4,7 @@ void	*ft_memalloc(size_t size)
 {
 	void *ptr;
 
-	ptr = malloc(size);
+	ptr = (char*)malloc(sizeof(size_t) * size);
 	if (ptr)
 	{
 		ft_bzero(ptr, size);

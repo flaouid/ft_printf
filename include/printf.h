@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   printf.h                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: flaouid <laouid.ferdaous@gmail.com>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/02/22 12:53:38 by flaouid           #+#    #+#             */
+/*   Updated: 2020/02/22 12:53:43 by flaouid          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef PRINTF_H
 # define PRINTF_H
 
@@ -20,7 +32,7 @@
 # define STAR_PREC 1
 # define STAR_WIDTH 2
 
-typedef struct s_params
+typedef struct			s_params
 {
 	char	*str;
 	int		precision;
@@ -34,19 +46,19 @@ typedef struct s_params
 	int		space :2;
 	int		plus :2;
 	int		minus :2;
-}			t_params;
+}						t_params;
 
-typedef struct	 s_ret
+typedef struct	s_ret
 {
 	int i;
-} 				t_ret;
-
+}				t_ret;
 
 void			add_str(char **str, char type, int number, int start);
 void			flags_str(va_list args, t_params *pr);
 void			flags_char(va_list args, t_params *pr);
 void			flags_int(va_list args, t_params *pr);
 void			flags_int_ll(va_list args, t_params *pr);
+void			flags_int_u(va_list args, t_params *pr);
 void			flags_width_prec(char **cpy, t_params *pr, va_list args);
 void			ft_strjoin_free(char *add, char **src, int type);
 int				ft_printf(const char *s, ...);
@@ -71,7 +83,5 @@ void			parse_error(t_params *pr);
 int				print_arg(int fd, t_params *pr, int *print);
 void			strjoin_free(char *add, char **src, int type);
 int				write_again(int fd, char *cpy, va_list args, int *print);
-
-
 
 #endif

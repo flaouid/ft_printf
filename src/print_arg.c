@@ -1,13 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   print_arg.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: flaouid <laouid.ferdaous@gmail.com>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/02/22 13:13:06 by flaouid           #+#    #+#             */
+/*   Updated: 2020/02/22 13:14:03 by flaouid          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../include/printf.h"
 
-// print l'argument, gere le cas du char 0, incremente le compteur de retour
-
-int	print_arg(int fd, t_params *pr, int *print)
+int			print_arg(int fd, t_params *pr, int *print)
 {
-	int	i;
-	char c;
-	int ret;
-
+	int		i;
+	char	c;
+	int		ret;
 
 	print = print + ft_strlen(pr->str);
 	write(fd, pr->str, ft_strlen(pr->str));

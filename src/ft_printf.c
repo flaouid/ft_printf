@@ -1,18 +1,30 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: flaouid <laouid.ferdaous@gmail.com>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/02/22 13:09:52 by flaouid           #+#    #+#             */
+/*   Updated: 2020/02/22 13:10:26 by flaouid          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../include/printf.h"
 
-int			ft_vdprintf(int fd, const char *format, va_list args)
+int				ft_vdprintf(int fd, const char *format, va_list args)
 {
-	char	*cpy;
-	int		write;
-	int		ret;
+	char		*cpy;
+	int			write;
+	int			ret;
 
 	cpy = (char*)format;
 	write = 0;
 	ret = write_again(fd, cpy, args, &write);
-		return (ret);
+	return (ret);
 }
 
-int			ft_dprintf(int fd, const char *format, ...)
+int				ft_dprintf(int fd, const char *format, ...)
 {
 	va_list		args;
 	int			ret;
@@ -23,7 +35,7 @@ int			ft_dprintf(int fd, const char *format, ...)
 	return (ret);
 }
 
-int			ft_vprintf(const char *format, va_list args)
+int				ft_vprintf(const char *format, va_list args)
 {
 	int			ret;
 
@@ -31,7 +43,7 @@ int			ft_vprintf(const char *format, va_list args)
 	return (ret);
 }
 
-int		ft_printf(const char *s, ...)
+int				ft_printf(const char *s, ...)
 {
 	va_list		args;
 	int			ret;
@@ -41,13 +53,6 @@ int		ft_printf(const char *s, ...)
 	ret = 0;
 	va_start(args, s);
 	ret = ft_vdprintf(1, s, args);
-//	while (s[ret] != '\0')
-//	{
-//		if (s[ret] && s[ret] == '%')
-//			ret++;
-//		else
-//			return (ft_strlen(&s[ret++]));
-//	}
 	va_end(args);
 	return (ret);
 }

@@ -1,20 +1,33 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   flags_str.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: flaouid <laouid.ferdaous@gmail.com>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/02/22 13:06:59 by flaouid           #+#    #+#             */
+/*   Updated: 2020/02/22 13:21:07 by flaouid          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../include/printf.h"
 
-void	flags_str(va_list args, t_params *pr)
+void					flags_str(va_list args, t_params *pr)
 {
-	char *temp;
+	char				*temp;
+
 	temp = va_arg(args, char *);
 	if (pr->type == 's' && temp)
 		pr->str = ft_strdup(temp);
 	else if (pr->type == 's' && !temp)
 		pr->str = ft_strdup("(null)");
-	if (pr->precision < 0)
+	if (pr->precision == 0)
 		ft_strdel(pr->str);
 }
 
-void	flags_char(va_list args, t_params *pr)
+void					flags_char(va_list args, t_params *pr)
 {
-	char	*str;
+	char				*str;
 
 	if (pr->type == 'c')
 	{
@@ -27,14 +40,47 @@ void	flags_char(va_list args, t_params *pr)
 	}
 }
 
-void	flags_int_ll(va_list args, t_params *pr)
+void					flags_int_ll(va_list args, t_params *pr)
 {
-	unsigned long long nb;
-	char	base[17];
+	unsigned long long	nb;
+	char				base[17];
+	char				*tmp;
 
 	check_base(base, pr);
 	nb = va_arg(args, unsigned long long);
 	if (pr->type == 'p')
-		nb = (unsigned long long int)nb;
-	pr->str = ft_itoa_base_ll(nb, base);
+	{
+		pr->str = ft_calloc(sizeof(char), 3);
+		move_x(pr);
+		if (pr->precision == -1 && !nb)
+		{
+			tmp = ft_strjoin(pr->str, "0");
+			free(pr->str);
+			pr->str = tmp;
+		}
+		else if (pr->precision >= 0 && !nb)
+		{
+			tmp = ft_strjoin(pr->str, "");
+			free(pr->str);
+			pr->str = tmp;
+		}
+		else
+		{
+			tmp = ft_strjoin(pr->str, ft_itoa_base_ll(nb, base));
+			free(pr->str);
+			pr->str = tmp;
+		}
+	}
+	else
+	{
+		if ((pr->type == 'x' || pr->type == 'X') && (!nb || nb == 0))
+		{
+			if (pr->precision >= 0)
+				pr->str = ft_strdup("");
+			else
+				pr->str = ft_strdup("0");
+		}
+		else
+			pr->str = ft_itoa_base_ll(nb, base);
+	}
 }
