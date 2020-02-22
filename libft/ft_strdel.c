@@ -1,15 +1,27 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strdel.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: flaouid <laouid.ferdaous@gmail.com>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/02/22 15:08:36 by flaouid           #+#    #+#             */
+/*   Updated: 2020/02/22 15:09:11 by flaouid          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-void	ft_strdel(char *str)
+void		ft_strdel(char *str)
 {
-	int i;
-	int j;
+	int		i;
+	int		j;
 
 	if (!str)
 		return ;
 	i = -1;
 	while (str[++i] != '\0')
-			;
+		;
 	j = -1;
 	while (++j < i)
 		str[j] = '\0';

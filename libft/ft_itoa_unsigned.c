@@ -1,13 +1,23 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_itoa_unsigned.c                                 :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: flaouid <laouid.ferdaous@gmail.com>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/02/22 15:06:25 by flaouid           #+#    #+#             */
+/*   Updated: 2020/02/22 15:06:41 by flaouid          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-char	*ft_itoa_unsigned(unsigned int n)
+char		*ft_itoa_unsigned(unsigned int n)
 {
 	char	*output;
 
 	if (!(output = (char *)malloc(sizeof(char) * 2)))
 		return (NULL);
-	//if (n == 2147483648)
-	//	return (output = ft_strdup("-2147483648"));
 	if (n < 0)
 	{
 		output[0] = '-';

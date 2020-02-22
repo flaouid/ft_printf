@@ -1,8 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_itoa_base.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: flaouid <laouid.ferdaous@gmail.com>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/02/22 15:06:59 by flaouid           #+#    #+#             */
+/*   Updated: 2020/02/22 15:07:00 by flaouid          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 char			*ft_itoa_base(unsigned int n, char *base)
 {
 	char		*str;
+
 	if (!(str = (char *)ft_calloc(sizeof(char), 2)))
 		return (NULL);
 	if (n < 0)

@@ -6,7 +6,7 @@
 /*   By: flaouid <laouid.ferdaous@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/04 13:25:59 by flaouid           #+#    #+#             */
-/*   Updated: 2020/02/07 11:37:13 by flaouid          ###   ########.fr       */
+/*   Updated: 2020/02/22 15:05:27 by flaouid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,4 +40,3 @@ int			ft_atoi(const char *str)
 	else
 		return (0);
 }
-
