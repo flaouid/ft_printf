@@ -6,7 +6,7 @@
 /*   By: flaouid <laouid.ferdaous@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/22 13:11:13 by flaouid           #+#    #+#             */
-/*   Updated: 2020/02/22 13:12:48 by flaouid          ###   ########.fr       */
+/*   Updated: 2020/02/24 16:45:51 by flaouid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,4 +55,5 @@ void				flags_int_u(va_list args, t_params *pr)
 		pr->str = ft_strdup("");
 	else
 		pr->str = ft_itoa_unsigned(nb);
+	free(pr->str);
 }

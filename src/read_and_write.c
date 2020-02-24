@@ -6,7 +6,7 @@
 /*   By: flaouid <laouid.ferdaous@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/22 13:16:41 by flaouid           #+#    #+#             */
-/*   Updated: 2020/02/22 15:13:27 by flaouid          ###   ########.fr       */
+/*   Updated: 2020/02/24 17:25:53 by flaouid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,10 +44,7 @@ int			write_again(int fd, char *cpy, va_list args, int *write)
 		}
 		cpy++;
 	}
-	if (n)
-	{
-		ret += n;
-		ft_putnstr_fd(fd, cpy, &n, write);
-	}
+	ret += n;
+	ft_putnstr_fd(fd, cpy, &n, write);
 	return (ret);
 }

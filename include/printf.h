@@ -6,7 +6,7 @@
 /*   By: flaouid <laouid.ferdaous@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/22 12:53:38 by flaouid           #+#    #+#             */
-/*   Updated: 2020/02/22 14:15:52 by flaouid          ###   ########.fr       */
+/*   Updated: 2020/02/24 14:25:37 by flaouid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,26 +32,21 @@
 # define STAR_PREC 1
 # define STAR_WIDTH 2
 
-typedef struct			s_params
+typedef struct	s_params
 {
-	char	*str;
-	int		precision;
-	int		width;
-	int		var_type;
-	char	type;
-	int		star;
-	int		char_null :2;
-	int		hash :2;
-	int		zero :2;
-	int		space :2;
-	int		plus :2;
-	int		minus :2;
-}						t_params;
-
-typedef struct	s_ret
-{
-	int i;
-}				t_ret;
+	char		*str;
+	int			precision;
+	int			width;
+	int			var_type;
+	char		type;
+	int			star;
+	int			char_null :2;
+	int			hash :2;
+	int			zero :2;
+	int			space :2;
+	int			plus :2;
+	int			minus :2;
+}				t_params;
 
 void			add_str(char **str, char type, int number, int start);
 void			flags_str(va_list args, t_params *pr);

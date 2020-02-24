@@ -6,7 +6,7 @@
 /*   By: flaouid <laouid.ferdaous@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/22 13:06:59 by flaouid           #+#    #+#             */
-/*   Updated: 2020/02/22 15:00:52 by flaouid          ###   ########.fr       */
+/*   Updated: 2020/02/24 16:19:36 by flaouid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ void					flags_char(va_list args, t_params *pr)
 		str[1] = '\0';
 		if (!str[0])
 			pr->char_null = 1;
+		free(str);
 		pr->str = str;
 	}
 }

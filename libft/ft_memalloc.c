@@ -6,7 +6,7 @@
 /*   By: flaouid <laouid.ferdaous@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/22 15:07:15 by flaouid           #+#    #+#             */
-/*   Updated: 2020/02/22 15:07:17 by flaouid          ###   ########.fr       */
+/*   Updated: 2020/02/24 16:47:46 by flaouid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,6 @@ void		*ft_memalloc(size_t size)
 		ft_bzero(ptr, size);
 		return (ptr);
 	}
+	free(ptr);
 	return (NULL);
 }

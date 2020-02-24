@@ -3,7 +3,8 @@
 
 int main(void)
 {
-//	int i;
+	int i;
+
 	ft_printf("_%x_\n", 0);
 	printf("_%x_\n", 0);
 	ft_printf("_%.0x_\n", 0);
@@ -14,8 +15,21 @@ int main(void)
 	printf("%-*.*s\n", -7, -3, "yolo");
 	ft_printf("%-*.*s\n", -7, 3, "yolo");
 	printf("%-*.*s\n", -7, 3, "yolo");
-//	ft_printf("%15.p\n", &i);
-//	printf("%15.p\n", &i);
-
-
+	ft_printf("%15.p\n", &i);
+	printf("%15.p\n", &i);
+	ft_printf("%%\n");
+	printf("%%\n");
+	ft_printf("%x\n", 0);
+	printf("%x\n", 0);
+	ft_printf("%x\n", -42);
+	printf("%x\n", -42);
+	ft_printf("%.2x\n", 5427);
+	printf("%.2x\n", 5427);
+	ft_printf("@moulitest: %.x %.0x\n", 0, 0);
+	printf("@moulitest: %.x %.0x\n", 0, 0);
+	ft_printf("this is a %s\n", "string");
+	printf("this is a %s\n", "string");
+	ft_printf("%d\n", -1);
+	printf("%d\n", -1);
+	system("leaks a.out");
 }

@@ -6,7 +6,7 @@
 /*   By: flaouid <laouid.ferdaous@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/04 13:12:32 by flaouid           #+#    #+#             */
-/*   Updated: 2020/02/01 13:03:55 by flaouid          ###   ########.fr       */
+/*   Updated: 2020/02/24 17:29:30 by flaouid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,10 @@ char		*ft_strdup(const char *s1)
 		return (NULL);
 	dest = (char *)malloc(sizeof(char) * (ft_strlen(s1) + 1));
 	if (!dest)
+	{
+		free(dest);
 		return (NULL);
+	}
 	i = 0;
 	while (s1[i] != '\0')
 	{
@@ -33,5 +36,6 @@ char		*ft_strdup(const char *s1)
 	{
 		return (dest);
 	}
+	free(dest);
 	return (0);
 }

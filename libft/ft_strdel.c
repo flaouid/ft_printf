@@ -6,7 +6,7 @@
 /*   By: flaouid <laouid.ferdaous@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/22 15:08:36 by flaouid           #+#    #+#             */
-/*   Updated: 2020/02/22 15:10:02 by flaouid          ###   ########.fr       */
+/*   Updated: 2020/02/24 14:21:25 by flaouid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void		ft_strdel(char *str)
 		return ;
 	i = -1;
 	while (str[++i] != '\0')
-			;
+		;
 	j = -1;
 	while (++j < i)
 		str[j] = '\0';
