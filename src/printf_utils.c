@@ -6,7 +6,7 @@
 /*   By: flaouid <laouid.ferdaous@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/22 13:15:30 by flaouid           #+#    #+#             */
-/*   Updated: 2020/02/24 17:20:46 by flaouid          ###   ########.fr       */
+/*   Updated: 2020/03/02 16:02:36 by flaouid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,8 @@ void			strjoin_free(char *add, char **src, int type)
 		free(*src);
 		*src = dest;
 	}
+	free(dest);
+	free(*src);
 }
 
 void			add_str(char **str, char type, int number, int start)
@@ -46,10 +48,7 @@ void			add_str(char **str, char type, int number, int start)
 
 	tmp = (char*)malloc(sizeof(char) * (number + 1));
 	if (!tmp)
-	{
-		free(tmp);
 		return ;
-	}
 	ft_memset(tmp, type, number);
 	tmp[number] = '\0';
 	if (!start)

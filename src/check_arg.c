@@ -6,7 +6,7 @@
 /*   By: flaouid <laouid.ferdaous@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/22 12:58:05 by flaouid           #+#    #+#             */
-/*   Updated: 2020/02/24 17:24:03 by flaouid          ###   ########.fr       */
+/*   Updated: 2020/03/02 15:38:36 by flaouid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ void			get_str(va_list args, t_params *pr)
 	{
 		tmp[0] = pr->type;
 		tmp[1] = '\0';
+		free(pr->str);
 		pr->str = ft_strdup(tmp);
 	}
 }
@@ -65,7 +66,6 @@ int				parse_arg(int fd, char **cpy, va_list args, int *write)
 	check(cpy, pr, args);
 	if (!pr->type)
 	{
-		free(pr);
 		(*cpy)--;
 		return (0);
 	}

@@ -6,7 +6,7 @@
 /*   By: flaouid <laouid.ferdaous@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/22 15:06:25 by flaouid           #+#    #+#             */
-/*   Updated: 2020/02/24 16:52:18 by flaouid          ###   ########.fr       */
+/*   Updated: 2020/02/29 16:56:30 by flaouid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ char		*ft_itoa_unsigned(unsigned int n)
 	{
 		output[0] = '-';
 		output[1] = '\0';
-		free(output);
 		output = ft_strjoin(output, ft_itoa_unsigned(-n));
 	}
 	else if (n >= 10)

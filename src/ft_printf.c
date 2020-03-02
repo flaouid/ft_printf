@@ -6,7 +6,7 @@
 /*   By: flaouid <laouid.ferdaous@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/22 13:09:52 by flaouid           #+#    #+#             */
-/*   Updated: 2020/02/24 15:00:23 by flaouid          ###   ########.fr       */
+/*   Updated: 2020/02/29 18:18:01 by flaouid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,9 +47,7 @@ int				ft_printf(const char *s, ...)
 {
 	va_list		args;
 	int			ret;
-	int			rev;
 
-	rev = 0;
 	ret = 0;
 	va_start(args, s);
 	ret = ft_vdprintf(1, s, args);

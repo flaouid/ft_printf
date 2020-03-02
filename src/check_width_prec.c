@@ -6,7 +6,7 @@
 /*   By: flaouid <laouid.ferdaous@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/22 13:02:59 by flaouid           #+#    #+#             */
-/*   Updated: 2020/02/24 16:28:17 by flaouid          ###   ########.fr       */
+/*   Updated: 2020/02/29 17:28:25 by flaouid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,9 @@ void		parse_width(t_params *pr)
 	if (pr->width > len)
 	{
 		if (pr->minus)
-		{
 			add_str(&(pr->str), pr->zero > 0 ? '0' : ' ', pr->width - len, 0);
-		}
 		else
-		{
 			add_str(&(pr->str), pr->zero > 0 ? '0' : ' ', pr->width - len, 1);
-		}
 	}
 }
 
@@ -40,12 +36,15 @@ void		parse_precision(t_params *pr)
 		{
 			str = ft_substr(pr->str, 0, pr->precision);
 			pr->str = str;
+			free(str);
 		}
 	}
 	else if (pr->str && pr->precision >= (int)ft_strlen(pr->str))
 	{
 		if (pr->str[0] == '+' || pr->str[0] == '-')
+		{
 			add_str(&(pr->str), '0', pr->precision - ft_strlen(pr->str) + 1, 1);
+		}
 		else
 			add_str(&(pr->str), '0', pr->precision - ft_strlen(pr->str), 1);
 	}

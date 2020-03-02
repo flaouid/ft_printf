@@ -6,7 +6,7 @@
 /*   By: flaouid <laouid.ferdaous@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/22 13:06:59 by flaouid           #+#    #+#             */
-/*   Updated: 2020/02/24 16:19:36 by flaouid          ###   ########.fr       */
+/*   Updated: 2020/03/02 16:14:41 by flaouid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,15 @@ void					flags_str(va_list args, t_params *pr)
 
 	temp = va_arg(args, char *);
 	if (pr->type == 's' && temp)
+	{
 		pr->str = ft_strdup(temp);
+		free(pr->str);
+	}
 	else if (pr->type == 's' && !temp)
+	{
 		pr->str = ft_strdup("(null)");
+		free(pr->str);
+	}
 	if (pr->precision == 0)
 		ft_strdel(pr->str);
 }

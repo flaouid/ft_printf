@@ -6,7 +6,7 @@
 /*   By: flaouid <laouid.ferdaous@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 12:59:53 by flaouid           #+#    #+#             */
-/*   Updated: 2020/02/24 16:31:41 by flaouid          ###   ########.fr       */
+/*   Updated: 2020/03/02 15:39:20 by flaouid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,11 @@ char				*ft_strjoin(const char *s1, const char *s2)
 	if (!str)
 		return (NULL);
 	i = -1;
-	while (s1[++i])
+	while (s1[++i] != '\0')
 		str[i] = s1[i];
 	j = -1;
 	i -= 1;
-	while (s2[++j])
+	while (s2[++j] != '\0')
 		str[++i] = s2[j];
 	str[++i] = '\0';
 	return (str);
