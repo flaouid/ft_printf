@@ -6,7 +6,7 @@
 /*   By: flaouid <laouid.ferdaous@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/13 13:00:58 by flaouid           #+#    #+#             */
-/*   Updated: 2020/03/02 16:03:17 by flaouid          ###   ########.fr       */
+/*   Updated: 2020/03/02 16:34:42 by flaouid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,24 +14,31 @@
 
 char		*ft_itoa(int n)
 {
-	char	*output;
+	char	*str;
+	char	*tmp;
 
-	if (!(output = (char *)malloc(sizeof(char) * 2)))
+	if (!(str = (char *)ft_calloc(sizeof(char), 2)))
 		return (NULL);
 	if (n == -2147483648)
-		return (output = ft_strdup("-2147483648"));
-	if (n <= 0)
+		return (str = ft_strdup("-2147483648"));
+	if (n < 0)
 	{
-		output[0] = '-';
-		output[1] = '\0';
-		output = ft_strjoin(output, ft_itoa(-n));
+		str[0] = '-';
+		str[1] = '\0';
+		tmp = ft_strjoin(str, ft_itoa(-n));
+		free(str);
+		str = tmp;
 	}
-	else if (n >= 10)
-		output = ft_strjoin(ft_itoa(n / 10), ft_itoa(n % 10));
-	else if (n < 10 && n > 0)
+	else if (n > 10)
 	{
-		output[0] = n + '0';
-		output[1] = '\0';
+		tmp = ft_strjoin(ft_itoa(n / 10), ft_itoa(n % 10));
+		free(str);
+		str = tmp;
 	}
-	return (output);
+	else if (n < 10 && n >= 0)
+	{
+		str[0] = n + '0';
+		str[1] = '\0';
+	}
+	return (str);
 }

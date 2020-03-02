@@ -6,7 +6,7 @@
 /*   By: flaouid <laouid.ferdaous@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/22 12:58:05 by flaouid           #+#    #+#             */
-/*   Updated: 2020/03/02 15:38:36 by flaouid          ###   ########.fr       */
+/*   Updated: 2020/03/02 17:01:10 by flaouid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@ void			get_str(va_list args, t_params *pr)
 	{
 		tmp[0] = pr->type;
 		tmp[1] = '\0';
-		free(pr->str);
 		pr->str = ft_strdup(tmp);
 	}
 }

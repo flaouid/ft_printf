@@ -23,8 +23,8 @@ int main(void)
 	//printf("%x\n", 0);
 	ft_printf("%x\n", -1);
 	printf("%x\n", -1);
-	ft_printf("%.2x\n", 1);
-	printf("%.2x\n", 1);
+	//ft_printf("%.2x\n", 1);
+	//printf("%.2x\n", 1);
 	//ft_printf("@moulitest: %.x %.0x\n", 0, 0);
 	//printf("@moulitest: %.x %.0x\n", 0, 0);
 	//ft_printf("this is a %s\n", "string");

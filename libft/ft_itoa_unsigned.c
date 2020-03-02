@@ -6,7 +6,7 @@
 /*   By: flaouid <laouid.ferdaous@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/22 15:06:25 by flaouid           #+#    #+#             */
-/*   Updated: 2020/02/29 16:56:30 by flaouid          ###   ########.fr       */
+/*   Updated: 2020/03/02 16:53:33 by flaouid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,29 @@
 
 char		*ft_itoa_unsigned(unsigned int n)
 {
-	char	*output;
+	char	*str;
+	char	*tmp;
 
-	if (!(output = (char *)malloc(sizeof(char) * 2)))
+	if (!(str = (char *)ft_calloc(sizeof(char), 2)))
 		return (NULL);
 	if (n < 0)
 	{
-		output[0] = '-';
-		output[1] = '\0';
-		output = ft_strjoin(output, ft_itoa_unsigned(-n));
+		str[0] = '-';
+		str[1] = '\0';
+		tmp = ft_strjoin(str, ft_itoa_unsigned(-n));
+		free(str);
+		str = tmp;
 	}
 	else if (n >= 10)
-		output = ft_strjoin(ft_itoa_unsigned(n / 10), ft_itoa_unsigned(n % 10));
+	{
+		tmp = ft_strjoin(ft_itoa_unsigned(n / 10), ft_itoa_unsigned(n % 10));
+		free(str);
+		str = tmp;
+	}
 	else if (n < 10 && n >= 0)
 	{
-		output[0] = n + '0';
-		output[1] = '\0';
+		str[0] = n + '0';
+		str[1] = '\0';
 	}
-	return (output);
+	return (str);
 }
