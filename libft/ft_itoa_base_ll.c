@@ -6,7 +6,7 @@
 /*   By: flaouid <laouid.ferdaous@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/22 15:06:00 by flaouid           #+#    #+#             */
-/*   Updated: 2020/03/02 16:58:39 by flaouid          ###   ########.fr       */
+/*   Updated: 2020/03/03 13:13:21 by flaouid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,13 @@ char			*ft_itoa_base_ll(unsigned long long n, char *base)
 	{
 		str[0] = '-';
 		str[1] = '\0';
-		tmp = ft_strjoin(str, ft_itoa_base_ll(-n, base));
+		tmp = ft_strjoinf(str, ft_itoa_base_ll(-n, base));
 		free(str);
 		str = tmp;
 	}
 	else if (n >= (unsigned int)ft_strlen(base))
 	{
-		tmp = ft_strjoin(ft_itoa_base_ll(n / ft_strlen(base), base),
+		tmp = ft_strjoinf(ft_itoa_base_ll(n / ft_strlen(base), base),
 		ft_itoa_base_ll(n % ft_strlen(base), base));
 		free(str);
 		str = tmp;

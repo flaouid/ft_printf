@@ -6,7 +6,7 @@
 /*   By: flaouid <laouid.ferdaous@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/22 13:06:59 by flaouid           #+#    #+#             */
-/*   Updated: 2020/03/02 16:38:17 by flaouid          ###   ########.fr       */
+/*   Updated: 2020/03/03 13:34:36 by flaouid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,15 +18,9 @@ void					flags_str(va_list args, t_params *pr)
 
 	temp = va_arg(args, char *);
 	if (pr->type == 's' && temp)
-	{
 		pr->str = ft_strdup(temp);
-		free(pr->str);
-	}
 	else if (pr->type == 's' && !temp)
-	{
 		pr->str = ft_strdup("(null)");
-		free(pr->str);
-	}
 	if (pr->precision == 0)
 		ft_strdel(pr->str);
 }
@@ -42,7 +36,6 @@ void					flags_char(va_list args, t_params *pr)
 		str[1] = '\0';
 		if (!str[0])
 			pr->char_null = 1;
-		free(pr->str);
 		pr->str = str;
 	}
 }
@@ -60,12 +53,11 @@ void					flags_int_ll(va_list args, t_params *pr)
 		pr->str = ft_calloc(sizeof(char), 3);
 		move_x(pr);
 		if (pr->precision == -1 && !nb)
-			tmp = ft_strjoin(pr->str, "0");
+			tmp = ft_strjoinf(pr->str, "0");
 		else if (pr->precision >= 0 && !nb)
-			tmp = ft_strjoin(pr->str, "");
+			tmp = ft_strjoinf(pr->str, "");
 		else
-			tmp = ft_strjoin(pr->str, ft_itoa_base_ll(nb, base));
-		free(pr->str);
+			tmp = ft_strjoinf(pr->str, ft_itoa_base_ll(nb, base));
 		pr->str = tmp;
 	}
 }

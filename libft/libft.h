@@ -6,7 +6,7 @@
 /*   By: flaouid <laouid.ferdaous@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/06 15:25:32 by flaouid           #+#    #+#             */
-/*   Updated: 2020/02/18 14:26:27 by flaouid          ###   ########.fr       */
+/*   Updated: 2020/03/03 13:06:28 by flaouid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ char				*ft_strdup(const char *s1);
 char				*ft_strchr(const char *str, int c);
 char				*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 char				*ft_strjoin(const char *dst, const char *src);
+char				*ft_strjoinf(char const *s1, char const *s2);
 char				*ft_strtrim(const char *s1, const char *set);
 char				*ft_substr(char const *s, unsigned int start, size_t len);
 void				ft_putstr_fd(char *s, int fd);
