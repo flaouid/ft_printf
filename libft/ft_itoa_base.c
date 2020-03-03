@@ -6,7 +6,7 @@
 /*   By: flaouid <laouid.ferdaous@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/22 15:06:59 by flaouid           #+#    #+#             */
-/*   Updated: 2020/03/03 13:11:51 by flaouid          ###   ########.fr       */
+/*   Updated: 2020/03/03 15:35:02 by flaouid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,5 @@ char			*ft_itoa_base(unsigned int n, char *base)
 			str[1] = '\0';
 		}
 	}
-		return (str);
+	return (str);
 }

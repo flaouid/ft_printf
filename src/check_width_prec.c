@@ -6,7 +6,7 @@
 /*   By: flaouid <laouid.ferdaous@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/22 13:02:59 by flaouid           #+#    #+#             */
-/*   Updated: 2020/03/03 14:29:09 by flaouid          ###   ########.fr       */
+/*   Updated: 2020/03/03 15:34:23 by flaouid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ void		parse_precision(t_params *pr)
 		if (pr->precision < (int)ft_strlen(pr->str) && pr->precision > 0)
 		{
 			str = ft_substr(pr->str, 0, pr->precision);
+			free(pr->str);
 			pr->str = str;
 		}
 	}
