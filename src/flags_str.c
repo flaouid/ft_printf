@@ -6,7 +6,7 @@
 /*   By: flaouid <laouid.ferdaous@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/22 13:06:59 by flaouid           #+#    #+#             */
-/*   Updated: 2020/03/03 13:34:36 by flaouid          ###   ########.fr       */
+/*   Updated: 2020/03/07 13:57:36 by flaouid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,11 +53,12 @@ void					flags_int_ll(va_list args, t_params *pr)
 		pr->str = ft_calloc(sizeof(char), 3);
 		move_x(pr);
 		if (pr->precision == -1 && !nb)
-			tmp = ft_strjoinf(pr->str, "0");
+			tmp = ft_strjoin(pr->str, "0");
 		else if (pr->precision >= 0 && !nb)
-			tmp = ft_strjoinf(pr->str, "");
+			tmp = ft_strjoin(pr->str, "");
 		else
-			tmp = ft_strjoinf(pr->str, ft_itoa_base_ll(nb, base));
+			tmp = ft_strjoin(pr->str, ft_itoa_base_ll(nb, base));
+		free(pr->str);
 		pr->str = tmp;
 	}
 }

@@ -53,7 +53,7 @@ $(NAME): $(OBJ)
 
 ex : $(NAME)
 	@(gcc -Wall -Wextra -Werror -g3 main.c libftprintf.a)
-	@(./a.out)
+	@(./a.out cat -e)
 
 clean :
 	@/bin/rm -Rf $(OBJ)

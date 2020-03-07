@@ -6,7 +6,7 @@
 /*   By: flaouid <laouid.ferdaous@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/06 15:25:32 by flaouid           #+#    #+#             */
-/*   Updated: 2020/03/03 13:06:28 by flaouid          ###   ########.fr       */
+/*   Updated: 2020/03/07 10:22:56 by flaouid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ void				*ft_memmove(void *dst, const void *src, size_t len);
 int					ft_memcmp(const void *s1, const void *s2, size_t n);
 char				**ft_split(char const *s, char c);
 char				*ft_unsigned_itoa_base(int value, char *base);
-char				*ft_itoa_base_ll(unsigned long long value, char *base);
+char				*ft_itoa_base_ll(unsigned long long n, char *base);
 char				*ft_itoa_base(unsigned int n, char *base);
 
 typedef struct		s_list

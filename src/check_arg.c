@@ -6,7 +6,7 @@
 /*   By: flaouid <laouid.ferdaous@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/22 12:58:05 by flaouid           #+#    #+#             */
-/*   Updated: 2020/03/03 14:38:55 by flaouid          ###   ########.fr       */
+/*   Updated: 2020/03/07 14:01:26 by flaouid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void			get_str(va_list args, t_params *pr)
 		flags_char(args, pr);
 	else if (pr->var_type == INT_U)
 		flags_int_ll(args, pr);
-	if (pr->type == '%')
+	else if (pr->type == '%')
 	{
 		tmp[0] = pr->type;
 		tmp[1] = '\0';

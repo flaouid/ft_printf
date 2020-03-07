@@ -6,7 +6,7 @@
 /*   By: flaouid <laouid.ferdaous@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/22 13:11:13 by flaouid           #+#    #+#             */
-/*   Updated: 2020/03/03 15:34:29 by flaouid          ###   ########.fr       */
+/*   Updated: 2020/03/07 12:09:17 by flaouid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ void				flags_int(va_list args, t_params *pr)
 {
 	unsigned int	nb;
 	char			base[17];
+
 
 	if (pr->type == 'd' || pr->type == 'i')
 	{
