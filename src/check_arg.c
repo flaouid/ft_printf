@@ -6,7 +6,7 @@
 /*   By: flaouid <laouid.ferdaous@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/22 12:58:05 by flaouid           #+#    #+#             */
-/*   Updated: 2020/03/07 14:01:26 by flaouid          ###   ########.fr       */
+/*   Updated: 2020/03/08 13:26:40 by flaouid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,7 @@ int				parse_arg(int fd, char **cpy, va_list args, int *write)
 {
 	t_params	*pr;
 	int			ret;
+	int			i;
 
 	pr = (t_params*)ft_memalloc(sizeof(t_params));
 	(*cpy)++;
@@ -73,7 +74,8 @@ int				parse_arg(int fd, char **cpy, va_list args, int *write)
 	parse_error(pr);
 	if (!pr->char_null)
 		modif_str(pr);
-	ret = print_arg(fd, pr, write);
+	i = 0;
+	ret = print_arg(fd, pr, write, i);
 	free(pr->str);
 	free(pr);
 	return (ret);

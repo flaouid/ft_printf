@@ -6,7 +6,7 @@
 /*   By: flaouid <laouid.ferdaous@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/22 12:53:38 by flaouid           #+#    #+#             */
-/*   Updated: 2020/03/03 13:58:50 by flaouid          ###   ########.fr       */
+/*   Updated: 2020/03/07 15:30:08 by flaouid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ int				parse_arg(int fd, char **cpy, va_list args, int *write);
 void			parse_width(t_params *pr);
 void			parse_precision(t_params *pr);
 void			parse_error(t_params *pr);
-int				print_arg(int fd, t_params *pr, int *print);
+int				print_arg(int fd, t_params *pr, int *print, int i);
 void			strjoin_free(char *add, char **src, int type);
 int				write_again(int fd, char *cpy, va_list args, int *print);
 

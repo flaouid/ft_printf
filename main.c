@@ -4,6 +4,7 @@
 int main(void)
 {
 	int i;
+	int s;
 
 	ft_printf("_%x_\n", 0);
 	printf("_%x_\n", 0);
@@ -17,6 +18,8 @@ int main(void)
 	printf("%s\n", "yolo");
 	ft_printf("%15.p\n", &i);
 	printf("%15.p\n", &i);
+	ft_printf("%p\n", &s);
+	printf("%p\n", &s);
 	ft_printf("%%\n");
 	printf("%%\n");
 	ft_printf("%x\n", 0);
@@ -33,5 +36,7 @@ int main(void)
 	printf("%d\n", -1);
 	ft_printf("%p\n", NULL);
 	printf("%p\n", NULL);
+	ft_printf("Kashim a %d histoires à raconter\n", 1001);
+	printf("Kashim a %d histoires à raconter\n", 1001);
 	system("leaks a.out");
 }
