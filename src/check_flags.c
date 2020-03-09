@@ -6,7 +6,7 @@
 /*   By: flaouid <laouid.ferdaous@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/22 12:59:49 by flaouid           #+#    #+#             */
-/*   Updated: 2020/03/02 15:37:54 by flaouid          ###   ########.fr       */
+/*   Updated: 2020/03/09 16:04:42 by flaouid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,7 @@ void		check(char **cpy, t_params *pr, va_list args)
 		(*cpy)++;
 		check(cpy, pr, args);
 	}
-	else if ((**cpy == '.' || ft_isdigit(**cpy)))
+	else if ((**cpy == '.'|| ft_isdigit(**cpy)))
 		flags_width_prec(cpy, pr, args);
 	else if (**cpy == '*')
 	{
