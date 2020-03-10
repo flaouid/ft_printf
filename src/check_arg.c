@@ -6,7 +6,7 @@
 /*   By: flaouid <laouid.ferdaous@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/22 12:58:05 by flaouid           #+#    #+#             */
-/*   Updated: 2020/03/09 15:52:47 by flaouid          ###   ########.fr       */
+/*   Updated: 2020/03/10 13:20:36 by flaouid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,8 +72,10 @@ int				parse_arg(int fd, char **cpy, va_list args, int *write)
 	get_type_variable(pr);
 	get_str(args, pr);
 	parse_error(pr);
-	if (!pr->char_null)
+	if (pr->type == 'c' || !pr->char_null)
+	{
 		modif_str(pr);
+	}
 	i = 0;
 	ret = print_arg(fd, pr, write, i);
 	free(pr->str);

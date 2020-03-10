@@ -6,7 +6,7 @@
 /*   By: flaouid <laouid.ferdaous@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/22 13:02:59 by flaouid           #+#    #+#             */
-/*   Updated: 2020/03/09 16:08:33 by flaouid          ###   ########.fr       */
+/*   Updated: 2020/03/10 17:17:17 by flaouid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,21 +17,19 @@ void		parse_width(t_params *pr)
 	int		len;
 
 	len = ft_strlen(pr->str);
+//	printf("pr->zero = %d && pr->precision = %d\n", pr->zero, pr->precision);
 	if (pr->width > len)
 	{
 		if (pr->minus < 0)
-		{
 			add_str(&(pr->str), pr->zero ? '0' : ' ', pr->width - len, 1);
-		}
 		if (pr->minus > 0)
-		{
 			add_str(&(pr->str), pr->zero ? '0' : ' ', pr->width - len, 0);
-		}
+		else if (pr->type == 'p' && !pr->precision)
+			add_str(&(pr->str), pr->zero ? '0' : ' ', pr->width - len, 1);
+		else if (!pr->precision && pr->type != 'c' && pr->type != 's')
+			add_str(&(pr->str), ' ', pr->width - len, 1);
 		else
-		{
-			//printf("ici");
-			add_str(&(pr->str), pr->zero > 0 ? ' ' : ' ', pr->width - len, 1);
-		}
+			add_str(&(pr->str), pr->zero ? '0' : ' ', pr->width - len, 1);
 	}
 }
 
@@ -52,6 +50,10 @@ void		parse_precision(t_params *pr)
 	{
 		if (pr->str[0] == '+' || pr->str[0] == '-')
 			add_str(&(pr->str), '0', pr->precision - ft_strlen(pr->str) + 1, 1);
+		else if (pr->str[0] == '%' && !pr->width)
+			add_str(&(pr->str), ' ', pr->width - ft_strlen(pr->str) + 1, 0);
+		else if (pr->str[0] == '%')
+			add_str(&(pr->str), ' ', pr->width - ft_strlen(pr->str), 0);
 		else
 			add_str(&(pr->str), '0', pr->precision - ft_strlen(pr->str), 1);
 	}

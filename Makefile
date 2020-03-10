@@ -52,7 +52,7 @@ $(NAME): $(OBJ)
 	@ar rcs $(NAME) $(OBJ) $^
 
 ex : $(NAME)
-	@(gcc -Wall -Wextra -Werror -g3 main.c libftprintf.a)
+	@(gcc -Wall -Wextra -Werror -g3  main.c libftprintf.a)
 	@(./a.out cat -e)
 
 clean :
