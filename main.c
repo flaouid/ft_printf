@@ -6,7 +6,7 @@ int main(void)
 	int i;
 	int s;
 
-	ft_printf("-%5c-\n", 0);
+	/*ft_printf("-%5c-\n", 0);
 	printf("-%5c-\n", 0);
 	ft_printf("-%-5c-\n", 0);
 	printf("-%-5c-\n", 0);
@@ -77,7 +77,7 @@ int main(void)
 
 	ft_printf("-->|%-16.p|<--\n", &i);
 	printf("-->|%-16.p|<--\n", &i);
-
+*/
 	ft_printf("18-->|%-3.*%|<--\n", 4);
 	printf("18-->|%-3.*%|<--\n", 4);
 	ft_printf("19-->|%-3.*%|<--\n", 6);
@@ -90,7 +90,7 @@ int main(void)
 	printf("22-->|%.*%|<--\n", 1);
 	ft_printf("23-->|%.*%|<--\n", 2);
 	printf("23-->|%.*%|<--\n", 2);
-
+/*
 	 ft_printf("_%x_\n", 0);
 	 printf("_%x_\n", 0);
 	 ft_printf("_%.0x_\n", 0);
@@ -125,5 +125,5 @@ int main(void)
 	 printf("%p\n", NULL);
 	 ft_printf("Kashim a %d histoires à raconter\n", 1001);
 	 printf("Kashim a %d histoires à raconter\n", 1001);
-	// system("leaks a.out");
+	// system("leaks a.out");*/
 }
