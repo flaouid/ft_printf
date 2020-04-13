@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/22 13:02:59 by flaouid           #+#    #+#             */
-/*   Updated: 2020/04/13 11:16:46 by user42           ###   ########.fr       */
+/*   Updated: 2020/04/13 11:22:18 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ void		parse_precision(t_params *pr)
 			add_str(&(pr->str), '0', pr->precision - ft_strlen(pr->str) + 1, 1);
 		else if (pr->str[0] == '%' && !pr->width)
 			add_str(&(pr->str), ' ', pr->width - ft_strlen(pr->str) + 1, 0);
-		else if (pr->str[0] == '%')
+		else if (pr->str[0] == '%' && !pr->minus)
 			add_str(&(pr->str), ' ', pr->width - ft_strlen(pr->str) + 1, 1);
 		else
 			add_str(&(pr->str), '0', pr->precision - ft_strlen(pr->str), 0);
