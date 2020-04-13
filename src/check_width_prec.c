@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_width_prec.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: flaouid <laouid.ferdaous@gmail.com>        +#+  +:+       +#+        */
+/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/22 13:02:59 by flaouid           #+#    #+#             */
-/*   Updated: 2020/03/10 17:17:17 by flaouid          ###   ########.fr       */
+/*   Updated: 2020/04/13 10:55:09 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ void		parse_precision(t_params *pr)
 {
 	char	*str;
 
+	printf("pr->width = %d && pr->precision = %d\n", pr->width, pr->precision);
 	if (pr->var_type == STR)
 	{
 		if (pr->precision <= (int)ft_strlen(pr->str) && pr->precision > 0)

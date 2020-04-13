@@ -3,20 +3,22 @@
 
 int main(void)
 {
+	int i;
+	int s;
 
 	ft_printf("-%5c-\n", 0);
 	printf("-%5c-\n", 0);
 	ft_printf("-%-5c-\n", 0);
 	printf("-%-5c-\n", 0);
-	//ft_printf("_%04.d_\n", 198);
-	//printf("_%04.d_\n", 198);
-	//ft_printf("_%04.0d_\n", 198);
-	//printf("_%04.0d_\n", 198);
-	//ft_printf("_%4.d_\n", 198);
-	//printf("_%4.d_\n", 198);
-	//ft_printf("_%4d_\n", 198);
-	//printf("_%4d_\n", 198);
-	/*ft_printf("2-->|%04.1d|<--\n", 198);
+	ft_printf("_%04.d_\n", 198);
+	printf("_%04.d_\n", 198);
+	ft_printf("_%04.0d_\n", 198);
+	printf("_%04.0d_\n", 198);
+	ft_printf("_%4.d_\n", 198);
+	printf("_%4.d_\n", 198);
+	ft_printf("_%4d_\n", 198);
+	printf("_%4d_\n", 198);
+	ft_printf("2-->|%04.1d|<--\n", 198);
 	printf("2-->|%04.1d|<--\n", 198);
 	ft_printf("3-->|%04.3d|<--\n", 198);
 	printf("3-->|%04.3d|<--\n", 198);
@@ -122,6 +124,6 @@ int main(void)
 	 ft_printf("%p\n", NULL);
 	 printf("%p\n", NULL);
 	 ft_printf("Kashim a %d histoires à raconter\n", 1001);
-	 printf("Kashim a %d histoires à raconter\n", 1001);*/
+	 printf("Kashim a %d histoires à raconter\n", 1001);
 	// system("leaks a.out");
 }

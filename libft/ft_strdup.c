@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: flaouid <laouid.ferdaous@gmail.com>        +#+  +:+       +#+        */
+/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/04 13:12:32 by flaouid           #+#    #+#             */
-/*   Updated: 2020/03/02 16:50:03 by flaouid          ###   ########.fr       */
+/*   Updated: 2020/04/10 17:01:10 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ char		*ft_strdup(const char *s1)
 		i++;
 	}
 	dest[i] = '\0';
-	if (dest != '\0')
+	if (dest[i] != '\0')
 		return (dest);
 	return (0);
 }
