@@ -3,8 +3,8 @@
 
 int main(void)
 {
-	int i;
-	int s;
+	//int i;
+	//int s;
 
 	/*ft_printf("-%5c-\n", 0);
 	printf("-%5c-\n", 0);
